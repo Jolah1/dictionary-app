@@ -3,12 +3,13 @@ import './App.css';
 import {useEffect, useState} from "react";
 import { Container } from '@mui/material';
 import Header from './components/Header/Header';
-import Definitions from './Definitions/Definitions';
+import Definitions from './components/Header/Definitions/Definitions';
 
 function App() {
 const [word, setWord] = useState("");
 const [meanings, setMeanings] = useState([]);
 const [category, setCategory] = useState("en");
+
 const dictonaryApi = async() => {
   try {
     const data = await axios.get(

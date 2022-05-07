@@ -9,11 +9,13 @@
     padding: 10px 20px;
     overflow-x: hidden;
 
+
 }
 
 .subTitle{
     font-size: 5vw;
     font-family: "montserrat", sans-serif;
+    
 }
 @media (max-width:900px){
     .meanings{
