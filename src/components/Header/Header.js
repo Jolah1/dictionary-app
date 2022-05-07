@@ -2,9 +2,9 @@ import { MenuItem, TextField } from "@mui/material";
 import React from "react"
 import "./Header.css";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import category from "../../data/category";
+import categories from "../../data/category";
 
-const Header = () => {
+const Header = ({setCategory, category, word, setWord}) => {
 
     const darkTheme = createTheme({
       palette: {
@@ -17,22 +17,32 @@ const Header = () => {
     
     return (
         <div className="header">
-            <span className="title">Word Hunt</span>
+            <span className="title">{word ? word : "Word Hunt"}</span>
 
             <div className="inputs">
             <ThemeProvider theme={darkTheme}>
-            <TextField id="standard-basic" label="Standard" variant="standard" />
+            <TextField 
+            className="search"
+             label="Search a Word"
+             variant="standard" 
+             label="standard"
+             value={word}
+             onChange={(e)=> setWord(e.target.value)}
+             />
         
             <TextField
-          id="standard-select-currency"
+            className="select"
           select
-          label="Select"
-          helperText="Please select your currency"
+          label="Language"
+          value={category}
+          oncChange={(e)=>setCategory(e.target.value)}
           variant="standard"
         >
             {
-                category.map((option) => (
-                    <MenuItem>{option.value}</MenuItem>
+                categories.map((option) => (
+                    <MenuItem key={option.label} value={option.label}>
+                        {option.value}
+                        </MenuItem>
                 ))}
 
           </TextField>
