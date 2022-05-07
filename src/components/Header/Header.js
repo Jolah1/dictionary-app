@@ -14,7 +14,12 @@ const Header = ({setCategory, category, word, setWord}) => {
         mode: 'dark',
       },
     });
-    
+
+    const handleChange = (language) => {
+setCategory(language);
+setWord("");
+    };
+
     return (
         <div className="header">
             <span className="title">{word ? word : "Word Hunt"}</span>
@@ -35,7 +40,7 @@ const Header = ({setCategory, category, word, setWord}) => {
           select
           label="Language"
           value={category}
-          oncChange={(e)=>setCategory(e.target.value)}
+          onChange={(e)=> handleChange(e.target.value)}
           variant="standard"
         >
             {

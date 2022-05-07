@@ -3,6 +3,7 @@ import './App.css';
 import {useEffect, useState} from "react";
 import { Container } from '@mui/material';
 import Header from './components/Header/Header';
+import Definitions from './Definitions/Definitions';
 
 function App() {
 const [word, setWord] = useState("");
@@ -10,7 +11,7 @@ const [meanings, setMeanings] = useState([]);
 const [category, setCategory] = useState("en");
 const dictonaryApi = async() => {
   try {
-    const data = await axios.get('https://api.dictionaryapi.dev/api/v2/entries/en/plane');
+    const data = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`);
   
   
   
@@ -25,7 +26,7 @@ console.log(meanings);
 
 useEffect(() => {
   dictonaryApi();
-}, [])
+}, [word, category]);
 
 
   return (
@@ -38,6 +39,10 @@ useEffect(() => {
         setCategory={setCategory} 
         word={word} 
         setWord={setWord} />
+      {meanings && (
+      <Definitions 
+      word={word} meaning={meanings} category={category} />
+  )}
 
         </Container>
     </div>

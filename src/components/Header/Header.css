@@ -30,6 +30,8 @@
     justify-content: space-around;
 }
 
-.search {
+.search,
+.select {
+    width: 43%;
     
 }
