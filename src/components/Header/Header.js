@@ -30,7 +30,7 @@ setWord("");
             className="search"
              label="Search a Word"
              variant="standard" 
-             label="standard"
+             label="Search"
              value={word}
              onChange={(e)=> setWord(e.target.value)}
              />
