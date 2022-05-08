@@ -21,13 +21,13 @@ const Definitions = ({word, category, meanings}) => {
             {word === "" ? (
             <span className="subTitle">Start by typing a new word in Search</span>
                 ) : ( 
-meanings.map((mean) => 
-mean.meanings.map((item) => 
-item.definitons.map((def) => (
+meanings?.map((mean) => 
+mean?.meanings?.map((item) => 
+item?.definitions?.map((def) => (
         <div 
         className="singleMean" 
         style={{ backgroundColor: "white", color: "black"}}>
-        <b>{def.definitions}</b>
+        <b>{def.definition}</b>
         <hr style={{backgroundColor: "black", width: "100%"}}/>
         {def.example && (
                 <span>

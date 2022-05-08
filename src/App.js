@@ -18,12 +18,13 @@ const dictonaryApi = async() => {
   
 
   setMeanings(data.data);
+  console.log(meanings);
   } catch (error) {
     console.log(error);
   }
 };
 
-//console.log(meanings);
+
 
 
 useEffect(() => {
@@ -34,7 +35,7 @@ useEffect(() => {
   return (
     <div className="App" style={{height: "100vh",backgroundColor: "grey", color: 'white'}}>
       <Container maxWidth="md" 
-      style={{display: "flex", flexDrection: "column", height: "100vh"}}>
+      style={{display: "flex", flexDirection: "column", height: "100vh"}}>
       
         <Header 
         category={category}
