@@ -28,7 +28,6 @@ setWord("");
             <ThemeProvider theme={darkTheme}>
             <TextField 
             className="search"
-             label="Search a Word"
              variant="standard" 
              label="Search"
              value={word}
