@@ -12,6 +12,7 @@
     flex-direction: column;
     height: 35vh;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 @media (max-width:900px){
@@ -20,7 +21,7 @@
         height: 25vh;
     }
     .title{
-        font-size: 11vh;
+        font-size: 7vh;
     }
 }
 
