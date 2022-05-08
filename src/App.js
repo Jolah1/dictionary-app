@@ -47,7 +47,13 @@ useEffect(() => {
 
 
   return (
-    <div className="App" style={{height: "100vh",backgroundColor: "skyblue", color: 'white'}}>
+    <div className="App" 
+    style={{
+      height: "100vh",
+      backgroundColor:LightMode ? "#fff" : "skyblue",
+     color:LightMode ? "black" : 'white',
+     transition:"all 0.5s linear",
+     }}>
       <Container 
       maxWidth="md" 
       style={{display: "flex", 
@@ -68,7 +74,9 @@ useEffect(() => {
         category={category}
         setCategory={setCategory} 
         word={word} 
-        setWord={setWord} />
+        setWord={setWord} 
+        LightMode={LightMode}
+        />
 
         {meanings && (
 

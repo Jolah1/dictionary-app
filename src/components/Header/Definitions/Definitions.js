@@ -1,7 +1,7 @@
 import React from "react";
 import "./Definitions.css";
 
-const Definitions = ({word, category, meanings}) => {
+const Definitions = ({word, category, meanings, LightMode}) => {
     return (
     <div className="meanings">
 
@@ -24,7 +24,11 @@ mean?.meanings?.map((item) =>
 item?.definitions?.map((def) => (
         <div 
         className="singleMean" 
-        style={{ backgroundColor: "white", color: "black"}}>
+        style={{ 
+            backgroundColor: LightMode ? "pink" : "white", 
+            color: LightMode ? "white" : "black"}}>
+
+
         <b>{def.definition}</b>
         <hr style={{backgroundColor: "black", width: "100%"}}/>
         {def.example && (
