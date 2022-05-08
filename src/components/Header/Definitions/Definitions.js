@@ -36,7 +36,7 @@ item?.definitions?.map((def) => (
             {def.synonyms && (
                 <span>
                 <b>Synonyms : </b>
-                {def.synonyms.map((s) => "${s}, ")}
+                {def.synonyms.map((s) => `${s}, `)}
             </span>
             )}
         </div>
